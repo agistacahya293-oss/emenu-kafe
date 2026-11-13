@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Santai - Menu Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>☕ Kopi Santai</h1>
+        <p>Scan, Pilih, dan Nikmati Pesananmu!</p>
+    </header>
+
+    <!-- Tombol Filter Kategori -->
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterMenu('semua')">Semua</button>
+        <button class="filter-btn" onclick="filterMenu('minuman')">Minuman</button>
+        <button class="filter-btn" onclick="filterMenu('makanan')">Makanan</button>
+    </div>
+
+    <!-- Daftar Menu -->
+    <main class="menu-container" id="menu-list">
+        <!-- Menu 1 -->
+        <div class="menu-card" data-kategori="minuman">
+            <img src="https://unsplash.com" alt="Es Kopi Susu">
+            <div class="menu-info">
+                <h3>Es Kopi Susu Gula Aren</h3>
+                <p>Perpaduan espresso robusta dan gula aren asli.</p>
+                <span class="harga">Rp 18.000</span>
+                <button class="add-btn" onclick="tambahPesanan('Es Kopi Susu Gula Aren', 18000)">+ Tambah</button>
+            </div>
+        </div>
+
+        <!-- Menu 2 -->
+        <div class="menu-card" data-kategori="minuman">
+            <img src="https://unsplash.com" alt="Matcha Latte">
+            <div class="menu-info">
+                <h3>Iced Matcha Latte</h3>
+                <p>Bubuk matcha premium Jepang dengan susu segar.</p>
+                <span class="harga">Rp 22.000</span>
+                <button class="add-btn" onclick="tambahPesanan('Iced Matcha Latte', 22000)">+ Tambah</button>
+            </div>
+        </div>
+
+        <!-- Menu 3 -->
+        <div class="menu-card" data-kategori="makanan">
+            <img src="https://unsplash.com" alt="Kentang Goreng">
+            <div class="menu-info">
+                <h3>French Fries Original</h3>
+                <p>Kentang goreng renyah disajikan dengan saus sambal.</p>
+                <span class="harga">Rp 15.000</span>
+                <button class="add-btn" onclick="tambahPesanan('French Fries Original', 15000)">+ Tambah</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Keranjang Melayang di Bawah -->
+    <div class="cart-bar" id="cart-bar" style="display: none;">
+        <div>
+            <span id="total-item">0 Item</span> | 
+            <strong id="total-harga">Rp 0</strong>
+        </div>
+        <button class="checkout-btn" onclick="kirimWhatsApp()">Pesan via WA ➔</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
